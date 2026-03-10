@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>diGiMarket | Premium Design Assets</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo" onclick="route('home')">diGi<span>Market</span></div>
+        <ul class="nav-links">
+            <li><a href="#" onclick="route('home')">Home</a></li>
+            <li><a href="#" onclick="route('shop')">Browse</a></li>
+            <li><a href="#" onclick="route('dashboard')" id="nav-dash" style="display:none">Dashboard</a></li>
+            <li><a href="#" onclick="route('admin')" id="nav-admin" style="display:none">Admin</a></li>
+        </ul>
+        <div class="nav-right">
+            <div class="cart-icon" onclick="route('checkout')">🛒 <span id="cart-count">0</span></div>
+            <button id="authBtn" class="btn-orange">Login</button>
+        </div>
+    </nav>
+
+    <section id="view-home" class="view">
+        <div class="hero">
+            <h1>PREMIUM <span>ASSETS</span> FOR CREATIVES</h1>
+            <p>High-quality LUTs, Overlays, and Templates. Instant Download.</p>
+            <button class="btn-orange-lg" onclick="route('shop')">Explore Shop</button>
+        </div>
+    </section>
+
+    <section id="view-shop" class="view" style="display:none">
+        <div class="container">
+            <h2 class="section-title">Marketplace</h2>
+            <div class="product-grid" id="product-list"></div>
+        </div>
+    </section>
+
+    <section id="view-checkout" class="view" style="display:none">
+        <div class="container">
+            <h2>Your Cart</h2>
+            <div id="cart-items"></div>
+            <div class="total-box">Total: <span id="cart-total">Rs. 0</span></div>
+            <button class="btn-orange-full" onclick="placeOrder()">Complete Purchase</button>
+        </div>
+    </section>
+
+    <section id="view-dashboard" class="view" style="display:none">
+        <div class="container">
+            <h2>Welcome Back, <span id="user-display-name">Guest</span></h2>
+            <h3>Your Downloads</h3>
+            <div id="user-downloads" class="product-grid"></div>
+        </div>
+    </section>
+
+    <section id="view-admin" class="view" style="display:none">
+        <div class="container">
+            <h2>Admin Panel</h2>
+            <div class="admin-form">
+                <input type="text" id="asset-title" placeholder="Asset Title">
+                <input type="number" id="asset-price" placeholder="Price (Rs.)">
+                <select id="asset-cat"><option value="video">Video</option><option value="graphic">Graphic</option></select>
+                <label>Preview Image</label><input type="file" id="asset-preview">
+                <label>Master File (Zip)</label><input type="file" id="asset-master">
+                <button class="btn-orange-full" id="upload-btn">Publish Asset</button>
+            </div>
+        </div>
+    </section>
+
+    <script type="module" src="app.js"></script>
+</body>
+</html>
